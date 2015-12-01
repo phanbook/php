@@ -1,7 +1,6 @@
 FROM ubuntu:14.04
 MAINTAINER Phanbook <helllo@phanbook.com>
 
-
 # run update and install nginx, php-fpm and other useful libraries
 RUN apt-get update -y && \
     apt-get install -y \
