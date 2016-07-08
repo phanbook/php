@@ -39,6 +39,8 @@ RUN (cd /tmp && git clone --depth=1 git://github.com/phalcon/cphalcon.git && \
 
 RUN echo "extension=phalcon.so" > /etc/php5/fpm/conf.d/30-phalcon.ini
 RUN echo "extension=phalcon.so" > /etc/php5/cli/conf.d/30-phalcon.ini
+# Restart FPM
+RUN service php5-fpm restart
 
 VOLUME [ "/var/www/html" ]
 WORKDIR /var/www/html
