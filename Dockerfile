@@ -15,7 +15,8 @@ RUN apt-get update -y && \
     php5-apcu \
     php5-gd \
     php5-curl \
-    php5-mysql
+    php5-mysql \
+    mcrypt
 
 # php-fpm config
 RUN sed -i -e "s/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/g" /etc/php5/fpm/php.ini
