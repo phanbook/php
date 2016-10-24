@@ -30,6 +30,7 @@ RUN sed -i "s/error_reporting = .*/error_reporting = E_ALL/" /etc/php5/fpm/php.i
 #RUN sed -i "s/display_errors = .*/display_errors = On/" /etc/php5/fpm/php.ini
 RUN find /etc/php5/cli/conf.d/ -name "*.ini" -exec sed -i -re 's/^(\s*)#(.*)/\1;\2/g' {} \;
 
+## Update to version phalcon 3
 RUN apt-get -qq install php5-dev libpcre3-dev gcc make php5-mysql re2c
 RUN (cd /tmp && git clone --depth=1 git://github.com/phalcon/cphalcon.git && \
     cd cphalcon/ext && \
